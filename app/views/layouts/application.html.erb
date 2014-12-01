@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TimPlayer: HTML5 Video Player that is an Open Source and beautiful alternative to Vimeo, JWPlayer, VideoJS, Youtube, Wistia</title>
+  
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <script>
+    $(document).ready(function() {
+      $('video').mediaelementplayer({
+        alwaysShowControls: false,
+        videoVolume: 'horizontal',
+        features: ['playpause','progress','volume','fullscreen']
+      });
+    });
+  </script>
+
+
+</head>
+<body>
+<%= render "layouts/header" %>
+<%= yield %>
+
+</body>
+</html>
